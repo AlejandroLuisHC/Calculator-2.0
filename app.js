@@ -1,4 +1,3 @@
-
 	// Capturing buttons
 
 const
@@ -17,12 +16,13 @@ subtract		= document.getElementById("subtract"),
 multiply 		= document.getElementById("multiply"),
 divide 			= document.getElementById("divide"),
 power 			= document.getElementById("pwr"),
-root            = document.getElementById('root'),
-percent         = document.getElementById('percent'),
+root            = document.getElementById("root"),
+percent         = document.getElementById("percent"),
 reverse 		= document.getElementById("reverse"),
 clean 			= document.getElementById("clean"),
 allClear		= document.getElementById("ac"),
 equals 			= document.getElementById("equals");
+
 
 	// Capturing the display
 
@@ -31,24 +31,22 @@ result 			= document.getElementById("result"),
 preview 		= document.getElementById("preview");
 
 
-	// Events number input
+	// Events number input{
 
-zero.onclick                =()=> result.textContent += "0";
-one.onclick                 =()=> result.textContent += "1";
-two.onclick                 =()=> result.textContent += "2";
-three.onclick               =()=> result.textContent += "3";
-four.onclick                =()=> result.textContent += "4";
-five.onclick                =()=> result.textContent += "5";
-six.onclick                 =()=> result.textContent += "6";
-seven.onclick               =()=> result.textContent += '7';
-eight.onclick               =()=> result.textContent += "8";
-nine.onclick                =()=> result.textContent += "9";
-float.onclick               =()=> result.textContent += ".";
-percent.onclick             =()=> result.textContent = parseFloat(result.textContent) / 100;  
-clean.onclick				=()=> clear();	
-allClear.onclick            =()=> clearAll();
-
-
+zero.onclick      =()=> {result.textContent === "ERROR" ? result.textContent = "0" : result.textContent += "0"; charactersCap(result);}
+one.onclick       =()=> {result.textContent === "ERROR" ? result.textContent = "1" : result.textContent += "1"; charactersCap(result);}
+two.onclick       =()=> {result.textContent === "ERROR" ? result.textContent = "2" : result.textContent += "2"; charactersCap(result);}
+three.onclick     =()=> {result.textContent === "ERROR" ? result.textContent = "3" : result.textContent += "3"; charactersCap(result);}
+four.onclick      =()=> {result.textContent === "ERROR" ? result.textContent = "4" : result.textContent += "4"; charactersCap(result);}
+five.onclick      =()=> {result.textContent === "ERROR" ? result.textContent = "5" : result.textContent += "5"; charactersCap(result);}
+six.onclick       =()=> {result.textContent === "ERROR" ? result.textContent = "6" : result.textContent += "6"; charactersCap(result);}
+seven.onclick     =()=> {result.textContent === "ERROR" ? result.textContent = "7" : result.textContent += "7"; charactersCap(result);}
+eight.onclick     =()=> {result.textContent === "ERROR" ? result.textContent = "8" : result.textContent += "8"; charactersCap(result);}
+nine.onclick      =()=> {result.textContent === "ERROR" ? result.textContent = "9" : result.textContent += "9"; charactersCap(result);}
+float.onclick     =()=> {result.textContent === "ERROR" ? result.textContent = "." : result.textContent += "."; charactersCap(result);}
+percent.onclick   =()=> result.textContent = parseFloat(result.textContent) / 100;  
+clean.onclick     =()=> clear();	
+allClear.onclick  =()=> clearAll();
 
 
 	// Events operation input
@@ -139,12 +137,14 @@ equals.onclick = function(e) {
 	}
 }
 
+
 	// Auxiliar variables
 
 var
 operandA,
 operandB,
 operator = "";
+
 
 	// Functions 
 
@@ -194,10 +194,20 @@ function solve() {
     }
     clearSolve(); 
     sol = Math.round(sol * 1000) / 1000;
+	if(sol > 999999) {
+		sol = sol.toExponential(3);
+	};
     result.textContent = sol;
 }
 
 
+function charactersCap(e) {
+	if (e.textContent.length > 12) {
+		e.textContent = "ERROR";
+	} else if (e.textContent.length === 12) {
+		alert("Careful! You cannot enter longer than 12 digits number!");
+	};
+};
 
 	// Switching between themes 
 

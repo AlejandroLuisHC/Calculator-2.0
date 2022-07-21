@@ -29,7 +29,8 @@ body {
 	padding: 20px;
 	border-radius: 30px;
 	background-color: #c7c0e9;
-	box-shadow: inset -5px -5px 25px rgba(0, 0, 0, .5);
+	box-shadow: inset -5px -5px 20px rgba(0, 0, 0, .5),
+				inset 3px 3px 5px rgba(255, 255, 255, .5);
 	justify-content: top;
 }
 
@@ -92,7 +93,8 @@ button {
 	width: 85px;
 	height: 85px;
 	font-weight: bold;
-	box-shadow: inset -2px -2px 3px rgba(0, 0, 0, .3);
+	box-shadow: inset -3px -3px 3px rgba(0, 0, 0, .4),
+				inset 2px 2px 3px rgba(255, 255, 255, .4);
 	font-size: 30px;
 }
 .input-complex button {
@@ -103,7 +105,8 @@ button {
 }
 
 button:active {
-	box-shadow: inset 2px 2px 3px rgba(0, 0, 0, .3);
+	box-shadow: inset 2px 2px 3px rgba(0, 0, 0, .4),
+				inset -2px -2px 4px rgba(255, 255, 255, .5);
 }
 
 .button-number {
@@ -163,7 +166,8 @@ button:active {
 	width: 18px;
 	left: 4px;
 	bottom: 4px;
-	box-shadow: inset -1px -1px 3px rgba(0, 0, 0, .3);
+	box-shadow: inset -1px -1px 5px rgba(0, 0, 0, .5),
+				inset 1px 1px 3px rgba(255, 255, 255, .5);
 	background-color: #FFBC42;
 	-webkit-transition: .4s;
 	transition: .4s;
