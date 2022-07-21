@@ -9,9 +9,9 @@
 }
 
 body {
-	background: radial-gradient(ellipse at top, maroon, transparent),
-	            radial-gradient(ellipse at bottom right, navy, transparent),
-	            radial-gradient(ellipse at bottom left, #319ec2, transparent);
+	background: radial-gradient(ellipse at top right, #FE5F55, transparent),
+	            radial-gradient(ellipse at bottom, #4d9f0c, transparent),
+	            radial-gradient(ellipse at bottom left, #B1D4E0, transparent);
 }
 .wrapper {
 	display: flex;
@@ -28,7 +28,7 @@ body {
 	min-height: 800px;
 	padding: 20px;
 	border-radius: 30px;
-	background-color: #453F3C;
+	background-color: #c7c0e9;
 	box-shadow: inset -5px -5px 25px rgba(0, 0, 0, .5);
 	justify-content: top;
 }
@@ -78,12 +78,11 @@ body {
 }
 
 button {
-	color:azure;
 	font-family: 'Kanit', sans-serif;
   	cursor: pointer;
 	border-radius: 50%;
 	border: 1px solid #101935;
-	background-color: #087CA7;
+	background-color: #9AD4D6;
 	width: 85px;
 	height: 85px;
 	font-weight: bold;
@@ -96,18 +95,15 @@ button:active {
 }
 
 .button-number {
-	background-color: #C3A995;
+	background-color: #F2FDFF;
 }
-
 .equals {
-	color: black;
-	background-color: #D58936;
+	background-color: #FFBC42;
 	width: 180px;
 	border-radius: 42.5px;
 	grid-column: 3 / span 2;
 	grid-row: 6;
 }
-
 .zero {
 	width: 180px;
 	border-radius: 42.5px;
@@ -138,7 +134,7 @@ button:active {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background-color: #C3A995;
+	background-color: #9AD4D6;
 	-webkit-transition: .4s;
 	transition: .4s;
 	box-shadow: inset 2px 2px 3px rgba(0, 0, 0, .3);
@@ -151,14 +147,18 @@ button:active {
 	width: 18px;
 	left: 4px;
 	bottom: 4px;
-	box-shadow: inset -1px -1px 5px rgba(0, 0, 0, .5);
-	background-color: #087CA7;
+	box-shadow: inset -1px -1px 3px rgba(0, 0, 0, .3);
+	background-color: #FFBC42;
 	-webkit-transition: .4s;
 	transition: .4s;
 }
 
 input:checked + .slider {
-	background-color: #bde9eb;
+	background-color: #F2FDFF;
+}
+
+input:focus + .slider {
+	box-shadow: 0 0 1px #F2FDFF;
 }
 
 input:checked + .slider:before {

@@ -15,116 +15,112 @@ const
 	subtract		= document.getElementById("subtract"),
 	multiply 		= document.getElementById("multiply"),
 	divide 			= document.getElementById("divide"),
-	modulus 		= document.getElementById("modulus"),
+	ans 			= document.getElementById("ans"),
 	reverse 		= document.getElementById("reverse"),
 	erase 			= document.getElementById("erase"),
 	ac 				= document.getElementById("ac"),
-	equals 			= document.getElementById("equals"),
-	switchTheme		= document.getElementById("switch")
+	equals 			= document.getElementById("equals")
 ;
 
 // Capturing the display
 const 
-    result = document.getElementById("result");
-    preview = document.getElementById("preview");
-
+    result 		= document.getElementById("result");
+    preview 	= document.getElementById("preview");
 ;
 
-one.addEventListener("click", function(){
+one.addEventListener("click", function() {
  	preview.innerHTML += "1";
-	
 })
 
-two.addEventListener("click", function(){
+two.addEventListener("click", function() {
 	 preview.innerHTML += "2";
-	
 })
 
-three.addEventListener("click", function(){
+three.addEventListener("click", function() {
 	 preview.innerHTML += "3";
-	
 })
 
-four.addEventListener("click", function(){
+four.addEventListener("click", function() {
 	 preview.innerHTML += "4";
-	
 })
 
-five.addEventListener("click", function(){
+five.addEventListener("click", function() {
 	 preview.innerHTML += "5";
-	
 })
 
-six.addEventListener("click", function(){
+six.addEventListener("click", function() {
  	preview.innerHTML += "6";
-	
 })
 
-seven.addEventListener("click", function(){
+seven.addEventListener("click", function() {
  	preview.innerHTML += "7";
-	
 })
 
-eight.addEventListener("click", function(){
+eight.addEventListener("click", function() {
 	 preview.innerHTML += "8";
-	
 })
 
-nine.addEventListener("click", function(){
+nine.addEventListener("click", function() {
 	 preview.innerHTML += "9";
-	
 })
 
-zero.addEventListener("click", function(){
+zero.addEventListener("click", function() {
 	 preview.innerHTML += "0";
-	
 })
 
-add.addEventListener("click", function(){
+add.addEventListener("click", function() {
 	 preview.innerHTML += "+";
-	
 })
 
-subtract.addEventListener("click", function(){
+subtract.addEventListener("click", function() {
 	 preview.innerHTML += "-";
-	
 })
 
-multiply.addEventListener("click", function(){
+multiply.addEventListener("click", function() {
 	 preview.innerHTML += "*";
-	
 })
 
-divide.addEventListener("click", function(){
+divide.addEventListener("click", function() {
 	 preview.innerHTML += "/";
-	
 })
 
-modulus.addEventListener("click", function(){
-	 preview.innerHTML += "%";
-	
+ans.addEventListener("click", function() {
+	 preview.innerHTML += result.innerHTML;
 })
 
-float.addEventListener("click", function(){
+float.addEventListener("click", function() {
 	 preview.innerHTML += ".";
-	
 })
 
-erase.addEventListener("click", function(){
+erase.addEventListener("click", function() {
 	 preview.innerHTML = preview.innerHTML.slice(0, -1);
-	
 })
 
-equals.addEventListener("click", function(){
-	result.innerHTML = eval(preview.innerHTML)
+ac.addEventListener("click", function() {
+	 preview.innerHTML = "";
+	 result.innerHTML = "";
 })
 
+equals.addEventListener("click", function() {
+	if(preview.innerHTML) {
+		result.innerHTML = eval(preview.innerHTML);
+		preview.innerHTML = "";
+	}
+})
 
+reverse.addEventListener("click", function() {
+	if (result.innerHTML[0] === "-") {
+		result.innerHTML = result.innerHTML.slice(1);
+	} else result.innerHTML = "-" + result.innerHTML;
+})
 
-
-
-
-      
-    
-	
 // Switching between themes 
+
+function toggleTheme() {
+    const theme = document.getElementById("style");
+    if (theme.getAttribute("href") === "style-light.css") {
+        theme.href = "style.css";
+    } else {
+        theme.href = "style-light.css";
+    }
+}

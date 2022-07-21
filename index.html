@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 	<title>JS Calculator</title>
-	<link rel="stylesheet" href="style.css">
+	<link id="style" rel="stylesheet" href="style.css">
 	<script src="app.js" defer></script>
 </head>
 
@@ -21,7 +21,7 @@
 
 				<button id="ac">AC</button>
 				<button id="reverse">+-</button>
-				<button id="modulus">%</button>
+				<button id="ans">Ans</button>
 				<button id="erase">&larr;</button>
 				<button id="seven" class="button-number">7</button>
 				<button id="eight" class="button-number">8</button>
@@ -38,7 +38,10 @@
 				<button id="zero" class="button-number zero">0</button>
 				<button id="float">.</button>
 				<button id="divide">/</button>
-				<button id="switch" class="switch">SW</button>
+				<label class="switch">
+					<input type="checkbox" onchange="toggleTheme()">
+					<span class="slider round"></span>
+				</label>
 				<button id="equals" class="equals">=</button>
 
 			</div>
