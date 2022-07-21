@@ -1,5 +1,5 @@
 
-// Capturing buttons
+	// Capturing buttons
 const
 	one 			= document.getElementById('one'),
 	two 			= document.getElementById('two'),
@@ -15,106 +15,173 @@ const
 	subtract		= document.getElementById("subtract"),
 	multiply 		= document.getElementById("multiply"),
 	divide 			= document.getElementById("divide"),
-	ans 			= document.getElementById("ans"),
+	power 			= document.getElementById("pwr"),
+	root            = document.getElementById('root'),
+	percent         = document.getElementById('percent'),
 	reverse 		= document.getElementById("reverse"),
-	erase 			= document.getElementById("erase"),
-	ac 				= document.getElementById("ac"),
+	clean 			= document.getElementById("clean"),
+	allClear		= document.getElementById("ac"),
 	equals 			= document.getElementById("equals")
 ;
 
-// Capturing the display
+	// Capturing the display
 const 
     result 		= document.getElementById("result");
     preview 	= document.getElementById("preview");
 ;
 
-one.addEventListener("click", function() {
- 	preview.innerHTML += "1";
-})
+	// Events input numbers
 
-two.addEventListener("click", function() {
-	 preview.innerHTML += "2";
-})
+	zero.onclick                =()=> result.textContent += "0";
+	one.onclick                 =()=> result.textContent += "1";
+	two.onclick                 =()=> result.textContent += "2";
+	three.onclick               =()=> result.textContent += "3";
+	four.onclick                =()=> result.textContent += "4";
+	five.onclick                =()=> result.textContent += "5";
+	six.onclick                 =()=> result.textContent += "6";
+	seven.onclick               =()=> result.textContent += '7';
+	eight.onclick               =()=> result.textContent += "8";
+	nine.onclick                =()=> result.textContent += "9";
+	float.onclick               =()=> result.textContent += ".";
+	percent.onclick             =()=> result.textContent = parseFloat(result.textContent) / 100;  
+	clean.onclick				=()=> clear();	
+	allClear.onclick            =()=> clearAll();
 
-three.addEventListener("click", function() {
-	 preview.innerHTML += "3";
-})
 
-four.addEventListener("click", function() {
-	 preview.innerHTML += "4";
-})
+	//auxiliar variables
+var operandA;
+var operandB;
+var operator = "";
 
-five.addEventListener("click", function() {
-	 preview.innerHTML += "5";
-})
-
-six.addEventListener("click", function() {
- 	preview.innerHTML += "6";
-})
-
-seven.addEventListener("click", function() {
- 	preview.innerHTML += "7";
-})
-
-eight.addEventListener("click", function() {
-	 preview.innerHTML += "8";
-})
-
-nine.addEventListener("click", function() {
-	 preview.innerHTML += "9";
-})
-
-zero.addEventListener("click", function() {
-	 preview.innerHTML += "0";
-})
-
-add.addEventListener("click", function() {
-	 preview.innerHTML += "+";
-})
-
-subtract.addEventListener("click", function() {
-	 preview.innerHTML += "-";
-})
-
-multiply.addEventListener("click", function() {
-	 preview.innerHTML += "*";
-})
-
-divide.addEventListener("click", function() {
-	 preview.innerHTML += "/";
-})
-
-ans.addEventListener("click", function() {
-	 preview.innerHTML += result.innerHTML;
-})
-
-float.addEventListener("click", function() {
-	 preview.innerHTML += ".";
-})
-
-erase.addEventListener("click", function() {
-	 preview.innerHTML = preview.innerHTML.slice(0, -1);
-})
-
-ac.addEventListener("click", function() {
-	 preview.innerHTML = "";
-	 result.innerHTML = "";
-})
-
-equals.addEventListener("click", function() {
-	if(preview.innerHTML) {
-		result.innerHTML = eval(preview.innerHTML);
-		preview.innerHTML = "";
+add.onclick = function() {
+	if (operator !== "") {
+		operandB = result.textContent;
+		solve();
 	}
-})
+	operandA = result.textContent;
+	preview.textContent = operandA + "+";
+	operator = "+";
+	clear();
+}
 
-reverse.addEventListener("click", function() {
-	if (result.innerHTML[0] === "-") {
-		result.innerHTML = result.innerHTML.slice(1);
-	} else result.innerHTML = "-" + result.innerHTML;
-})
+subtract.onclick = function() {
+	if (operator !== "") {
+		operandB = result.textContent;
+		solve();
+	}
+	operandA = result.textContent;
+	preview.textContent = operandA + "-";
+	operator = "-";
+	clear();
+}
 
-// Switching between themes 
+multiply.onclick = function() {
+	if (operator !== "") {
+		operandB = result.textContent;
+		solve();
+	}
+	operandA = result.textContent;
+	preview.textContent = operandA + "*";
+	operator = "*";
+	clear();
+}
+
+divide.onclick = function() {
+	if (operator !== "") {
+		operandB = result.textContent;
+		solve();
+	}
+	operandA = result.textContent;
+	preview.textContent = operandA + "/";
+	operator = "/";
+	clear();
+}
+
+root.onclick = function(e) {
+	if (operator !== "") {
+		operandB = result.textContent;
+		solve();
+	}
+	operandA = result.textContent;
+	preview.textContent = operandA + "√(?)";
+	operator = "√";
+	clear();
+}
+
+power.onclick = function(e) {
+	if (operator !== "") { 
+		operandB = result.textContent;
+		solve();
+	}
+	operandA = result.textContent;
+	preview.textContent = operandA + "^(?)";
+	operator = "^";
+	clear();
+}
+
+equals.onclick = function(e) {
+	if (operator === "^" || operator === "√") {
+		operandB = result.textContent;
+		preview.textContent += operandB + ")=";
+		solve();
+	 } else if (operator !== "") {
+		operandB = result.textContent;
+		preview.textContent += operandB + "=";
+		solve();
+	}
+}
+
+function clearAll() {
+    preview.textContent = "";
+    result.textContent = "";
+    operandA = 0;
+    operandB = 0;
+    operator = "";
+}
+function clear() {
+    result.textContent = "";
+}
+
+function clearSolve() {
+    result.textContent = "";
+    operandA = 0;
+    operandB = 0;
+    operator = "";
+}
+
+function solve() {
+    var sol = 0;
+    switch (operator) {
+        case "+":
+            sol = parseFloat(operandA) + parseFloat(operandB);
+            break;
+        
+        case "-":
+            sol = parseFloat(operandA) - parseFloat(operandB);
+            break;
+        
+        case "*":
+            sol = parseFloat(operandA) * parseFloat(operandB);
+            break;
+        
+        case "/":
+            sol = parseFloat(operandA) / parseFloat(operandB);
+            break;
+        case "^":
+            sol = parseFloat(operandA) ** parseFloat(operandB);
+            break;
+        case "√":
+            sol = parseFloat(operandA) ** (1 / parseFloat(operandB));
+            break;
+    }
+    clearSolve(); 
+    sol = Math.round(sol * 1000) / 1000;
+    result.textContent = sol;
+}
+
+
+
+	// Switching between themes 
 
 function toggleTheme() {
     const theme = document.getElementById("style");

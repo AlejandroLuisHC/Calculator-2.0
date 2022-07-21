@@ -69,11 +69,17 @@ body {
 
 /* calculator buttons 
 ........................................................*/
+.input-complex {
+	padding: 20px 10px 0;
+	display: flex;
+	justify-content: space-around;
+}
+
 .input {
-	margin-top: 30px;
+	margin-top: 15px;
 	height: 500px;
 	display: grid;
-	grid-template: repeat(6, 1fr) / repeat(4, 1fr);
+	grid-template: repeat(5, 1fr) / repeat(4, 1fr);
 	grid-gap: 10px 10px;
 }
 
@@ -89,6 +95,12 @@ button {
 	box-shadow: inset -2px -2px 3px rgba(0, 0, 0, .3);
 	font-size: 30px;
 }
+.input-complex button {
+	border-radius: 50px;
+	width: 60px;
+	height: 35px;
+	font-size: 15px;
+}
 
 button:active {
 	box-shadow: inset 2px 2px 3px rgba(0, 0, 0, .3);
@@ -102,7 +114,11 @@ button:active {
 	width: 180px;
 	border-radius: 42.5px;
 	grid-column: 3 / span 2;
-	grid-row: 6;
+	grid-row: 5;
+}
+.ac {
+	background-color: #FFBC42;
+
 }
 .zero {
 	width: 180px;
