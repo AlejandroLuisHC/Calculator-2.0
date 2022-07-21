@@ -130,7 +130,7 @@ power.onclick = function(e) {
 equals.onclick = function(e) {
 	if (operator === "^" || operator === "√") {
 		operandB = result.textContent;
-		preview.textContent += operandB + ")=";
+		preview.textContent = preview.textContent.slice(0, -3) + operandB + "=";
 		solve();
 	} else if (operator !== "") {
 		operandB = result.textContent;
