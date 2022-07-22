@@ -1,4 +1,4 @@
-	// Capturing buttons
+// Capturing buttons
 
 const
 one 			= document.getElementById('one'),
@@ -24,14 +24,34 @@ allClear		= document.getElementById("ac"),
 equals 			= document.getElementById("equals");
 
 
-	// Capturing the display
+// Capturing the display
 
 const 
 result 			= document.getElementById("result"),
 preview 		= document.getElementById("preview");
 
 
-	// Events number input{
+// Welcoming message
+
+window.onload = async () => {
+	result.textContent = "WELCOME"
+	for (let i = 0; i < 14; i++) {
+		if (i === 13) {
+			result.textContent = "0";
+		}else if (i < 6) {
+			result.textContent += "-";
+		} else if (i > 5) {
+			result.textContent = result.textContent.substring(1);
+			result.textContent += "-";
+		};
+		await wait(250)
+	};
+}
+
+const wait = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+
+// Events number input{
 
 zero.onclick      =()=> {(result.textContent === "ERROR") || (result.textContent === "0") ? result.textContent = "0" 
 						 : result.textContent += "0"; charactersCap(result);};
@@ -160,18 +180,18 @@ operator = "";
 
 function clearAll() {
 	preview.textContent = "";
-    result.textContent = "";
+    result.textContent = "0";
     operandA = 0;
     operandB = 0;
     operator = "";
 }
 
 function clear() {
-	result.textContent = "";
+	result.textContent = "0";
 }
 
 function clearSolve() {
-	result.textContent = "";
+	result.textContent = "0";
     operandA = 0;
     operandB = 0;
     operator = "";
@@ -218,6 +238,8 @@ function charactersCap(e) {
 		alert("Careful! You cannot enter longer than 12 digits number!");
 	};
 };
+
+
 
 	// Switching between themes 
 
