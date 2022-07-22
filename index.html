@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width">
 	<title>JS Calculator</title>
 	<link id="style" rel="stylesheet" href="style.css">
+	<script src="https://kit.fontawesome.com/fe24ce668c.js" crossorigin="anonymous"></script>
 	<script src="app.js" defer></script>
 </head>
 
@@ -42,6 +43,9 @@
 				<button id="zero" class="button-number zero">0</button>
 				<button id="float">.</button>
 				<button id="divide">/</button>
+				<label class="contrast-check">
+					<input type="checkbox" onchange="toggleThemeContrast()">
+				</label>
 				<label class="switch">
 					<input type="checkbox" onchange="toggleTheme()">
 					<span class="slider round"></span>

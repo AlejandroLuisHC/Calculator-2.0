@@ -9,9 +9,7 @@
 }
 
 body {
-	background: radial-gradient(ellipse at top right, maroon, transparent),
-	            radial-gradient(ellipse at bottom right, navy, transparent),
-	            radial-gradient(ellipse at bottom left, #319ec2, transparent);
+	background-color: white;
 }
 .wrapper {
 	display: flex;
@@ -28,14 +26,16 @@ body {
 	min-height: 800px;
 	padding: 20px;
 	border-radius: 30px;
-	background-color: #453F3C;
-	box-shadow: inset -5px -5px 20px rgba(0, 0, 0, .5),
-				inset 3px 3px 5px rgba(255, 255, 255, .5);
+	border: 5px solid black;
+	background-color: white;
 	justify-content: top;
+	
 }
 
 .display {
-	color: azure;
+	border-radius: 20px;
+	border: 5px solid black;
+	color: black;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -46,25 +46,24 @@ body {
 }
 
 .display-preview {
-	background-color: #5e5e5e; 
+	background-color: white; 
 	width: 400px;
 	height: 70px;
 	padding: 30px 25px;
 	border-radius: 20px 20px 0 0;
 	text-align: right;
-	font-size: 25px;
-	box-shadow: inset 0 7px 9px -7px rgba(0,0,0,0.7);
+	font-size: 35px;
 	overflow: hidden;
 }
 
 .display-result {
-	background-color: #5e5e5e; 
+	background-color: white; 
 	width: 400px;
 	height: 80px;
 	padding: 0 25px;
 	border-radius: 0 0 20px 20px;
 	text-align: right;
-	font-size: 60px;
+	font-size: 70px;
 	overflow: hidden;
 }
 
@@ -86,17 +85,15 @@ body {
 }
 
 button {
-	color:azure;
+	color:black;
 	font-family: 'Rubik', sans-serif;
   	cursor: pointer;
 	border-radius: 50%;
-	border: 1px solid #101935;
-	background-color: #087CA7;
+	border: 5px solid black;
+	background-color: white;
 	width: 85px;
 	height: 85px;
 	font-weight: bold;
-	box-shadow: inset -3px -3px 3px rgba(0, 0, 0, .4),
-				inset 2px 2px 3px rgba(255, 255, 255, .4);
 	font-size: 40px;
 }
 
@@ -113,13 +110,13 @@ button:active {
 }
 
 .button-number {
-	background-color: #C3A995;
+	background-color: white;
 	font-size: 60px;
 }
 
 .equals {
-	color: black;
-	background-color: #D58936;
+	color: white;
+	background-color: black;
 	width: 180px;
 	border-radius: 42.5px;
 	grid-column: 3 / span 2;
@@ -127,8 +124,8 @@ button:active {
 	font-size: 70px;
 }
 .ac {
-	color: black;
-	background-color: #D58936;
+	color: white;
+	background-color: black;
 }
 .zero {
 	width: 180px;
@@ -159,7 +156,6 @@ button:active {
 	position: relative;
 	width: 10px;
 	height: 10px;
-
 }
 
 .contrast-check input {
@@ -169,50 +165,10 @@ button:active {
 }
 
 .slider {
-	align-self: center;
-	position: absolute;
-	cursor: pointer;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background-color: #C3A995;
-	-webkit-transition: .4s;
-	transition: .4s;
-	box-shadow: inset 2px 2px 3px rgba(0, 0, 0, .3);
+	display: none;
 }
 
 .slider:before {
-	position: absolute;
-	content: "";
-	height: 18px;
-	width: 18px;
-	left: 4px;
-	bottom: 4px;
-	box-shadow: inset -1px -1px 5px rgba(0, 0, 0, .5),
-				inset 1px 1px 3px rgba(255, 255, 255, .5);
-	background-color: #087CA7;
-	-webkit-transition: .4s;
-	transition: .4s;
+	display: none;
 }
 
-input:checked + .slider {
-	background-color: #bde9eb;
-}
-
-input:checked + .slider:before {
-	-webkit-transform: translateX(34px);
-	    -ms-transform: translateX(34px);
-	        transform: translateX(34px);
-}
-.slider.round {
-	border-radius: 34px;
-}
-
-.slider.round:before {
-	border-radius: 50%;
-}
-
-.icon-font {
-	font-family: Arial, Helvetica, sans-serif;
-}

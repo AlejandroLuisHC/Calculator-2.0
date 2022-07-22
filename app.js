@@ -35,10 +35,10 @@ preview 		= document.getElementById("preview");
 
 window.onload = async () => {
 	result.textContent = "WELCOME"
-	for (let i = 0; i < 14; i++) {
+	for (let i = 0; i <= 13; i++) {
 		if (i === 13) {
 			result.textContent = "0";
-		}else if (i < 6) {
+		} else if (i < 6) {
 			result.textContent += "-";
 		} else if (i > 5) {
 			result.textContent = result.textContent.substring(1);
@@ -237,7 +237,7 @@ function charactersCap(e) {
 	} else if (e.textContent.length === 12) {
 		alert("Careful! You cannot enter longer than 12 digits number!");
 	};
-};
+}
 
 
 
@@ -247,7 +247,16 @@ function toggleTheme() {
     const theme = document.getElementById("style");
     if (theme.getAttribute("href") === "style-light.css") {
         theme.href = "style.css";
-    } else {
+    } else if (theme.getAttribute("href") === "style.css") {
         theme.href = "style-light.css";
+    }
+}
+
+function toggleThemeContrast() {
+    const theme = document.getElementById("style");
+    if (theme.getAttribute("href") !== "style-contrast.css") {
+		theme.href = "style-contrast.css";
+    } else {
+        theme.href = ("href", "style.css");
     }
 }

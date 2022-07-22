@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500;600&display=swap');
 @font-face {
 	font-family: 'digital-7';
 	src: url('/assets/fonts/digital-7.regular.ttf')
@@ -85,7 +86,7 @@ body {
 }
 
 button {
-	font-family: 'Kanit', sans-serif;
+	font-family: 'Rubik', sans-serif;
   	cursor: pointer;
 	border-radius: 50%;
 	border: 1px solid #101935;
@@ -95,22 +96,23 @@ button {
 	font-weight: bold;
 	box-shadow: inset -3px -3px 3px rgba(0, 0, 0, .4),
 				inset 2px 2px 3px rgba(255, 255, 255, .4);
-	font-size: 30px;
+	font-size: 40px;
 }
 .input-complex button {
 	border-radius: 50px;
 	width: 60px;
 	height: 35px;
-	font-size: 15px;
+	font-size: 20px;
 }
 
 button:active {
 	box-shadow: inset 2px 2px 3px rgba(0, 0, 0, .4),
-				inset -2px -2px 4px rgba(255, 255, 255, .5);
+	inset -2px -2px 4px rgba(255, 255, 255, .5);
 }
 
 .button-number {
 	background-color: #F2FDFF;
+	font-size: 60px;
 }
 .equals {
 	background-color: #FFBC42;
@@ -118,6 +120,7 @@ button:active {
 	border-radius: 42.5px;
 	grid-column: 3 / span 2;
 	grid-row: 5;
+	font-size: 70px;
 }
 .ac {
 	background-color: #FFBC42;
@@ -133,6 +136,7 @@ button:active {
 .....................................................*/
 
 .switch {
+	grid-column: 1;
 	align-self: end;
 	position: relative;
 	width: 60px;
@@ -143,6 +147,20 @@ button:active {
 	opacity: 0;
 	width: 0;
 	height: 0;
+}
+
+.contrast-check {
+	grid-column: 1;
+	align-self: end;
+	position: relative;
+	width: 10px;
+	height: 10px;
+}
+
+.contrast-check input {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
 }
 
 .slider {
