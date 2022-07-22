@@ -33,17 +33,27 @@ preview 		= document.getElementById("preview");
 
 	// Events number input{
 
-zero.onclick      =()=> {result.textContent === "ERROR" ? result.textContent = "0" : result.textContent += "0"; charactersCap(result);}
-one.onclick       =()=> {result.textContent === "ERROR" ? result.textContent = "1" : result.textContent += "1"; charactersCap(result);}
-two.onclick       =()=> {result.textContent === "ERROR" ? result.textContent = "2" : result.textContent += "2"; charactersCap(result);}
-three.onclick     =()=> {result.textContent === "ERROR" ? result.textContent = "3" : result.textContent += "3"; charactersCap(result);}
-four.onclick      =()=> {result.textContent === "ERROR" ? result.textContent = "4" : result.textContent += "4"; charactersCap(result);}
-five.onclick      =()=> {result.textContent === "ERROR" ? result.textContent = "5" : result.textContent += "5"; charactersCap(result);}
-six.onclick       =()=> {result.textContent === "ERROR" ? result.textContent = "6" : result.textContent += "6"; charactersCap(result);}
-seven.onclick     =()=> {result.textContent === "ERROR" ? result.textContent = "7" : result.textContent += "7"; charactersCap(result);}
-eight.onclick     =()=> {result.textContent === "ERROR" ? result.textContent = "8" : result.textContent += "8"; charactersCap(result);}
-nine.onclick      =()=> {result.textContent === "ERROR" ? result.textContent = "9" : result.textContent += "9"; charactersCap(result);}
-float.onclick     =()=> {result.textContent === "ERROR" ? result.textContent = "." : result.textContent += "."; charactersCap(result);}
+zero.onclick      =()=> {(result.textContent === "ERROR") || (result.textContent === "0") ? result.textContent = "0" 
+						 : result.textContent += "0"; charactersCap(result);};
+one.onclick       =()=> {(result.textContent === "ERROR") || (result.textContent === "0") ? result.textContent = "1" 
+						 : result.textContent += "1"; charactersCap(result);};
+two.onclick       =()=> {(result.textContent === "ERROR") || (result.textContent === "0") ? result.textContent = "2" 
+						 : result.textContent += "2"; charactersCap(result);};
+three.onclick     =()=> {(result.textContent === "ERROR") || (result.textContent === "0") ? result.textContent = "3" 
+                         : result.textContent += "3"; charactersCap(result);};
+four.onclick      =()=> {(result.textContent === "ERROR") || (result.textContent === "0") ? result.textContent = "4" 
+						 : result.textContent += "4"; charactersCap(result);};
+five.onclick      =()=> {(result.textContent === "ERROR") || (result.textContent === "0") ? result.textContent = "5" 
+						 : result.textContent += "5"; charactersCap(result);};
+six.onclick       =()=> {(result.textContent === "ERROR") || (result.textContent === "0") ? result.textContent = "6" 
+						 : result.textContent += "6"; charactersCap(result);};
+seven.onclick     =()=> {(result.textContent === "ERROR") || (result.textContent === "0") ? result.textContent = "7" 
+						 : result.textContent += "7"; charactersCap(result);};
+eight.onclick     =()=> {(result.textContent === "ERROR") || (result.textContent === "0") ? result.textContent = "8" 
+						 : result.textContent += "8"; charactersCap(result);};
+nine.onclick      =()=> {(result.textContent === "ERROR") || (result.textContent === "0") ? result.textContent = "9" 
+ 	 					 : result.textContent += "9"; charactersCap(result);};
+float.onclick     =()=> {result.textContent === "ERROR" ? result.textContent = "." : result.textContent += "."; charactersCap(result);};
 percent.onclick   =()=> result.textContent = parseFloat(result.textContent) / 100;  
 clean.onclick     =()=> clear();	
 allClear.onclick  =()=> clearAll();
