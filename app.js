@@ -35,16 +35,17 @@ preview 		= document.getElementById("preview");
 
 window.onload = async () => {
 	result.textContent = "WELCOME"
-	for (let i = 0; i <= 13; i++) {
-		if (i === 13) {
+	await wait(1000)
+	for (let i = 0; i <= 12; i++) {
+		if (i === 12) {
 			result.textContent = "0";
-		} else if (i < 6) {
+		} else if (i < 5) {
 			result.textContent += "-";
-		} else if (i > 5) {
+		} else if (i > 4) {
 			result.textContent = result.textContent.substring(1);
 			result.textContent += "-";
 		};
-		await wait(250)
+		await wait(200)
 	};
 }
 
