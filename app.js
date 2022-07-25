@@ -74,13 +74,24 @@ eight.onclick     =()=> {(result.textContent === "ERROR") || (result.textContent
 						 : result.textContent += "8"; charactersCap(result);};
 nine.onclick      =()=> {(result.textContent === "ERROR") || (result.textContent === "0") ? result.textContent = "9" 
  	 					 : result.textContent += "9"; charactersCap(result);};
-float.onclick     =()=> {result.textContent === "ERROR" ? result.textContent = "." : result.textContent += "."; charactersCap(result);};
 percent.onclick   =()=> result.textContent = parseFloat(result.textContent) / 100;  
 clean.onclick     =()=> clear();	
 allClear.onclick  =()=> clearAll();
 
 
 	// Events operation input
+
+float.onclick =()=> {
+	if (isFloat) {
+	} else if (result.textContent === "ERROR") {
+		result.textContent = ".";
+		isFloat = true;
+	} else {
+		result.textContent += ".";
+		isFloat = true;
+		charactersCap(result);
+	}
+}
 
 reverse.onclick =()=> {
 	if (result.textContent[0] !== "-") {
@@ -91,6 +102,7 @@ reverse.onclick =()=> {
 }
 
 add.onclick =()=> {
+	isFloat = false;
 	if (operator !== "") {
 		operandB = result.textContent;
 		solve();
@@ -102,6 +114,7 @@ add.onclick =()=> {
 }
 
 subtract.onclick =()=> {
+	isFloat = false;
 	if (operator !== "") {
 		operandB = result.textContent;
 		solve();
@@ -113,6 +126,7 @@ subtract.onclick =()=> {
 }
 
 multiply.onclick =()=> {
+	isFloat = false;
 	if (operator !== "") {
 		operandB = result.textContent;
 		solve();
@@ -124,6 +138,7 @@ multiply.onclick =()=> {
 }
 
 divide.onclick =()=> {
+	isFloat = false;
 	if (operator !== "") {
 		operandB = result.textContent;
 		solve();
@@ -135,6 +150,7 @@ divide.onclick =()=> {
 }
 
 root.onclick =()=> {
+	isFloat = false;
 	if (operator !== "") {
 		operandB = result.textContent;
 		solve();
@@ -146,6 +162,7 @@ root.onclick =()=> {
 }
 
 power.onclick =()=> {
+	isFloat = false;
 	if (operator !== "") { 
 		operandB = result.textContent;
 		solve();
@@ -157,6 +174,7 @@ power.onclick =()=> {
 }
 
 equals.onclick =()=> {
+	isFloat = false;
 	if (operator === "^" || operator === "√") {
 		operandB = result.textContent;
 		preview.textContent = preview.textContent.slice(0, -3) + operandB + "=";
@@ -174,7 +192,8 @@ equals.onclick =()=> {
 var
 operandA,
 operandB,
-operator = "";
+operator = "",
+isFloat = false;
 
 
 	// Functions 
@@ -230,6 +249,154 @@ function solve() {
 	};
     result.textContent = sol;
 }
+
+
+	// KEyboard input 
+
+
+// Keyboard input 
+
+window.addEventListener("keydown", (e) => {
+	if (e.key === "0") {
+	  zero.click()
+	}
+  });
+
+  window.addEventListener("keydown", (e) => {
+	if (e.key === "1") {
+	  one.click()
+	}
+  });
+
+  window.addEventListener("keydown", (e) => {
+	if (e.key === "2") {
+	  two.click()
+	}
+  });
+
+  window.addEventListener("keydown", (e) => {
+	if (e.key === "3") {
+	  three.click()
+	}
+  });
+
+  window.addEventListener("keydown", (e) => {
+	if (e.key === "4") {
+	  four.click()
+	}
+  });
+
+  window.addEventListener("keydown", (e) => {
+	if (e.key === "5") {
+	  five.click()
+	}
+  });
+
+  window.addEventListener("keydown", (e) => {
+	if (e.key === "6") {
+	  six.click()
+	}
+  });
+
+  window.addEventListener("keydown", (e) => {
+	if (e.key === "7") {
+	  seven.click()
+	}
+  });
+
+  window.addEventListener("keydown", (e) => {
+	if (e.key === "8") {
+	  eight.click()
+	}
+  });
+
+  window.addEventListener("keydown", (e) => {
+	if (e.key === "9") {
+	  nine.click()
+	}
+  });
+
+  window.addEventListener("keydown", (e) => {
+	if (e.key === "+") {
+	  add.click()
+	}
+  });
+
+  window.addEventListener("keydown", (e) => {
+	if (e.key === "-") {
+	  subtract.click()
+	}
+  });
+
+  window.addEventListener("keydown", (e) => {
+	if (e.key === "/") {
+	  divide.click()
+	}
+  });
+
+  window.addEventListener("keydown", (e) => {
+	if (e.key === "*") {
+	  multiply.click()
+	}
+  });
+
+  window.addEventListener("keydown", (e) => {
+	e.preventDefault();
+	if (e.key === "Enter") {
+	  equals.click()
+	}
+  });
+
+  window.addEventListener("keydown", (e) => {
+	if (e.key === "%") {
+	  percent.click()
+	}
+  });
+
+  window.addEventListener("keydown", (e) => {
+	if (e.key === "%") {
+	  percent.click()
+	}
+  });
+
+  window.addEventListener("keydown", (e) => {
+	if (e.key === ".") {
+	  float.click()
+	}
+  });
+
+  window.addEventListener("keydown", (e) => {
+	if (e.key === "Escape") {
+	  allClear.click()
+	}
+  });
+
+  window.addEventListener("keydown", (e) => {
+	if (e.key === "Backspace") {
+	  clean.click()
+	}
+  });
+
+  window.addEventListener("keydown", (e) => {
+	if (e.key === "PageDown") {
+	  reverse.click()
+	}
+  });
+
+  window.addEventListener("keydown", (e) => {
+	if (e.key === "e") {
+	  power.click()
+	}
+  });
+
+  window.addEventListener("keydown", (e) => {
+	if (e.key === "r") {
+	  root.click()
+	}
+  });
+
+
+  	// Characters cap
 
 
 function charactersCap(e) {
