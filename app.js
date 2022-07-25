@@ -258,6 +258,6 @@ function toggleThemeContrast() {
     if (theme.getAttribute("href") !== "style-contrast.css") {
 		theme.href = "style-contrast.css";
     } else {
-        theme.href = ("href", "style.css");
+        theme.href = "style.css";
     }
 }
