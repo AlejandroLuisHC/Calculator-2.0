@@ -82,7 +82,7 @@ allClear.onclick  =()=> clearAll();
 
 	// Events operation input
 
-reverse.onclick = function() {
+reverse.onclick =()=> {
 	if (result.textContent[0] !== "-") {
 		result.textContent = `-${result.textContent}`;
 	} else {
@@ -90,7 +90,7 @@ reverse.onclick = function() {
 	}
 }
 
-add.onclick = function() {
+add.onclick =()=> {
 	if (operator !== "") {
 		operandB = result.textContent;
 		solve();
@@ -101,7 +101,7 @@ add.onclick = function() {
 	clear();
 }
 
-subtract.onclick = function() {
+subtract.onclick =()=> {
 	if (operator !== "") {
 		operandB = result.textContent;
 		solve();
@@ -112,7 +112,7 @@ subtract.onclick = function() {
 	clear();
 }
 
-multiply.onclick = function() {
+multiply.onclick =()=> {
 	if (operator !== "") {
 		operandB = result.textContent;
 		solve();
@@ -123,7 +123,7 @@ multiply.onclick = function() {
 	clear();
 }
 
-divide.onclick = function() {
+divide.onclick =()=> {
 	if (operator !== "") {
 		operandB = result.textContent;
 		solve();
@@ -134,7 +134,7 @@ divide.onclick = function() {
 	clear();
 }
 
-root.onclick = function(e) {
+root.onclick =()=> {
 	if (operator !== "") {
 		operandB = result.textContent;
 		solve();
@@ -145,7 +145,7 @@ root.onclick = function(e) {
 	clear();
 }
 
-power.onclick = function(e) {
+power.onclick =()=> {
 	if (operator !== "") { 
 		operandB = result.textContent;
 		solve();
@@ -156,7 +156,7 @@ power.onclick = function(e) {
 	clear();
 }
 
-equals.onclick = function(e) {
+equals.onclick =()=> {
 	if (operator === "^" || operator === "√") {
 		operandB = result.textContent;
 		preview.textContent = preview.textContent.slice(0, -3) + operandB + "=";
