@@ -1,4 +1,4 @@
-// Capturing buttons
+	// Capturing buttons
 
 const
 one 			= document.getElementById('one'),
@@ -24,14 +24,14 @@ allClear		= document.getElementById("ac"),
 equals 			= document.getElementById("equals");
 
 
-// Capturing the display
+	// Capturing the display
 
 const 
 result 			= document.getElementById("result"),
 preview 		= document.getElementById("preview");
 
 
-// Welcoming message
+	// Welcoming message
 
 window.onload = async () => {
 	result.textContent = "WELCOME"
@@ -52,7 +52,7 @@ window.onload = async () => {
 const wait = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
 
-// Events number input{
+	// Events number input{
 
 zero.onclick      =()=> {(result.textContent === "ERROR") || (result.textContent === "0") ? result.textContent = "0" 
 						 : result.textContent += "0"; charactersCap(result);};
@@ -251,16 +251,9 @@ function solve() {
 }
 
 
-	// KEyboard input 
+	// Keyboard input 
 
-
-// Keyboard input 
-
-window.addEventListener("keydown", (e) => {
-	if (e.key === "0") {
-	  zero.click()
-	}
-  });
+window.addEventListener("keydown", (e) => {e.key === "0" ? zero.click(): })
 
   window.addEventListener("keydown", (e) => {
 	if (e.key === "1") {
@@ -398,7 +391,6 @@ window.addEventListener("keydown", (e) => {
 
   	// Characters cap
 
-
 function charactersCap(e) {
 	if (e.textContent.length > 12) {
 		e.textContent = "ERROR";
@@ -406,7 +398,6 @@ function charactersCap(e) {
 		alert("Careful! You cannot enter longer than 12 digits number!");
 	};
 }
-
 
 
 	// Switching between themes 
